@@ -1,46 +1,87 @@
-# Getting Started with Create React App
+# Quotes App Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This frontend is built with **React** and **TypeScript**. It connects to the backend Quotes API to fetch and display quotes from the [FavQs API](https://favqs.com/api/). Users can view quotes by tag and navigate by page number.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 What It Does
 
-### `npm start`
+* Accepts user input for:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  * `Page` number (to fetch a specific quote page)
+  * `Tag` (optional filter: e.g. `life`, `technology`, etc.)
+* Fetches quotes from your custom backend (`/quotes` endpoint)
+* Displays:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  * The quote body
+  * Author (as a clickable link to FavQs)
+  * Associated tags
+  * Votes (favorites, upvotes, downvotes)
+* Handles loading state and input validation
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔧 Setup Instructions
 
-### `npm run build`
+### 1. Install Dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+cd frontend
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Start the Development Server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
 
-### `npm run eject`
+The app runs on [http://localhost:3000](http://localhost:3000) and expects the backend to be running on `http://localhost:3001`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🧩 Folder Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+frontend/
+├── src/
+│   ├── components/
+│   │   ├── QuotesFetcher.tsx      # Main component with inputs + fetch logic
+│   │   ├── QuotesList.tsx         # Renders a list of quotes
+│   │   ├── QuoteComponent.tsx     # Renders a single quote (styled)
+│   │   └── QuoteComponent.css     # Styles for QuoteComponent
+│   ├── types/Quote.ts             # Shared Quote interface
+│   └── App.tsx                    # Root component
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## 🛠 Technologies Used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* React
+* TypeScript
+* Fetch API
+* Functional components with hooks (useState, useEffect)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## 🧪 How to Use It
+
+1. Enter a page number (e.g. `1`, `5`, `10`).
+2. (Optional) Enter a tag to filter quotes (e.g. `life`, `success`).
+3. Click “Get Quotes”.
+4. Results will appear in a styled list.
+
+---
+
+## 🔍 Notes
+
+* If you enter an invalid page number, you may get no results (depends on FavQs).
+* Cached responses from the backend load instantly.
+* Tags and votes shown are directly from the API response.
+
+---
+
+## 📄 License
+
+MIT
