@@ -46,12 +46,18 @@ The app runs on [http://localhost:3000](http://localhost:3000) and expects the b
 frontend/
 ├── src/
 │   ├── components/
-│   │   ├── QuotesFetcher.tsx      # Main component with inputs + fetch logic
-│   │   ├── QuotesList.tsx         # Renders a list of quotes
-│   │   ├── QuoteComponent.tsx     # Renders a single quote (styled)
-│   │   └── QuoteComponent.css     # Styles for QuoteComponent
-│   ├── types/Quote.ts             # Shared Quote interface
-│   └── App.tsx                    # Root component
+│   │   ├── common/
+│   │   │   └── Quote/
+│   │   │       ├── index.tsx              # Quote component
+│   │   │       ├── QuoteComponent.css     # Quote styles
+│   │   │       └── Quote.interface.ts     # Quote TypeScript interface
+│   │   ├── QuotesFetcher.tsx              # Main fetch logic and inputs
+│   │   └── QuotesList.tsx                 # Maps quotes into Quote components
+│   ├── App.tsx                            # Root app component
+│   ├── index.tsx                          # React entry point
+│   └── ... (configs and test files)
+├── package.json
+└── README.md
 ```
 
 ---
