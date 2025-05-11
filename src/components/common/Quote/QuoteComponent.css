@@ -1,0 +1,25 @@
+.quote {
+ margin-bottom: 1rem;
+ padding-left: 1rem;
+ border-left: 4px solid #ccc;
+}
+
+.quote blockquote {
+ font-style: italic;
+ margin: 0 0 0.5rem 0;
+}
+
+.quote-author {
+ font-weight: bold;
+ margin-bottom: 0.25rem;
+}
+
+.quote-tags {
+ font-size: 0.9em;
+ color: #333;
+}
+
+.quote-metrics {
+ font-size: 0.8em;
+ color: #666;
+}
